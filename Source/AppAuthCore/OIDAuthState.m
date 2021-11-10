@@ -128,6 +128,7 @@ static const NSUInteger kExpiryTimeTolerance = 60;
 + (id<OIDExternalUserAgentSession>)
     authStateByPresentingAuthorizationRequest:(OIDAuthorizationRequest *)authorizationRequest
                             externalUserAgent:(id<OIDExternalUserAgent>)externalUserAgent
+                 tokenExchangeRequestCallback:(OIDAuthStateTokenExchangeRequestCallback)tokenExchangeRequestCallback
                                      callback:(OIDAuthStateAuthorizationCallback)callback {
   // presents the authorization request
   id<OIDExternalUserAgentSession> authFlowSession = [OIDAuthorizationService
@@ -145,6 +146,10 @@ static const NSUInteger kExpiryTimeTolerance = 60;
                                // code exchange
                                OIDTokenRequest *tokenExchangeRequest =
                                    [authorizationResponse tokenExchangeRequest];
+                               
+                               // Let the client inject additional parameters if needed
+                               tokenExchangeRequestCallback(tokenExchangeRequest);
+                               
                                [OIDAuthorizationService performTokenRequest:tokenExchangeRequest
                                               originalAuthorizationResponse:authorizationResponse
                                    callback:^(OIDTokenResponse *_Nullable tokenResponse,

@@ -42,6 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (id<OIDExternalUserAgentSession>)
     authStateByPresentingAuthorizationRequest:(OIDAuthorizationRequest *)authorizationRequest
+                 tokenExchangeRequestCallback:(OIDAuthStateTokenExchangeRequestCallback)tokenExchangeRequestCallback
                                      callback:(OIDAuthStateAuthorizationCallback)callback;
 
 @end

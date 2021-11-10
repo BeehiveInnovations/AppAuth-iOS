@@ -48,6 +48,10 @@ typedef void (^OIDAuthStateAction)(NSString *_Nullable accessToken,
 typedef void (^OIDAuthStateAuthorizationCallback)(OIDAuthState *_Nullable authState,
                                                   NSError *_Nullable error);
 
+/// Called when we're about to perform a token exchange after receiving a valid authorization code. This gives the client
+/// the opportunity to inject additional parameters into the request if desired.
+typedef void (^OIDAuthStateTokenExchangeRequestCallback)(OIDTokenRequest *_Nonnull tokenExchangeRequest);
+
 /*! @brief A convenience class that retains the auth state between @c OIDAuthorizationResponse%s
         and @c OIDTokenResponse%s.
  */
@@ -132,6 +136,7 @@ typedef void (^OIDAuthStateAuthorizationCallback)(OIDAuthState *_Nullable authSt
 + (id<OIDExternalUserAgentSession>)
     authStateByPresentingAuthorizationRequest:(OIDAuthorizationRequest *)authorizationRequest
                             externalUserAgent:(id<OIDExternalUserAgent>)externalUserAgent
+                 tokenExchangeRequestCallback:(OIDAuthStateTokenExchangeRequestCallback)tokenExchangeRequestCallback
                                      callback:(OIDAuthStateAuthorizationCallback)callback;
 
 /*! @internal

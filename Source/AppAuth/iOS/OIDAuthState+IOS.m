@@ -29,6 +29,7 @@
 + (id<OIDExternalUserAgentSession>)
     authStateByPresentingAuthorizationRequest:(OIDAuthorizationRequest *)authorizationRequest
                      presentingViewController:(UIViewController *)presentingViewController
+                 tokenExchangeRequestCallback:(OIDAuthStateTokenExchangeRequestCallback)tokenExchangeRequestCallback
                                      callback:(OIDAuthStateAuthorizationCallback)callback {
   id<OIDExternalUserAgent> externalUserAgent;
 #if TARGET_OS_MACCATALYST
@@ -37,18 +38,22 @@
 #else // TARGET_OS_MACCATALYST
   externalUserAgent = [[OIDExternalUserAgentIOS alloc] initWithPresentingViewController:presentingViewController];
 #endif // TARGET_OS_MACCATALYST
+  
   return [self authStateByPresentingAuthorizationRequest:authorizationRequest
                                        externalUserAgent:externalUserAgent
+                            tokenExchangeRequestCallback:tokenExchangeRequestCallback
                                                 callback:callback];
 }
 
 #if !TARGET_OS_MACCATALYST
 + (id<OIDExternalUserAgentSession>)
     authStateByPresentingAuthorizationRequest:(OIDAuthorizationRequest *)authorizationRequest
-                                  callback:(OIDAuthStateAuthorizationCallback)callback {
+                 tokenExchangeRequestCallback:(OIDAuthStateTokenExchangeRequestCallback)tokenExchangeRequestCallback
+                                     callback:(OIDAuthStateAuthorizationCallback)callback {
   OIDExternalUserAgentIOS *externalUserAgent = [[OIDExternalUserAgentIOS alloc] init];
   return [self authStateByPresentingAuthorizationRequest:authorizationRequest
                                        externalUserAgent:externalUserAgent
+                            tokenExchangeRequestCallback:tokenExchangeRequestCallback
                                                 callback:callback];
 }
 #endif // !TARGET_OS_MACCATALYST
