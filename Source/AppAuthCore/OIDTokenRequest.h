@@ -93,7 +93,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*! @brief The client's additional token request parameters.
  */
-@property(nonatomic, readonly, nullable) NSDictionary<NSString *, NSString *> *additionalParameters;
+@property(nonatomic, readonly, nullable) NSMutableDictionary<NSString *, NSString *> *additionalParameters;
 
 /*! @internal
     @brief Unavailable. Please use

@@ -127,7 +127,7 @@ static NSString *const kAdditionalParametersKey = @"additionalParameters";
     _refreshToken = [refreshToken copy];
     _codeVerifier = [codeVerifier copy];
     _additionalParameters =
-        [[NSDictionary alloc] initWithDictionary:additionalParameters copyItems:YES];
+        [[NSMutableDictionary alloc] initWithDictionary:additionalParameters copyItems:YES];
     
     // Additional validation for the authorization_code grant type
     if ([_grantType isEqual:OIDGrantTypeAuthorizationCode]) {
