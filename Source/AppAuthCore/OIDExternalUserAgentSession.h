@@ -22,6 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @protocol OIDExternalUserAgentSession <NSObject>
 
+/// If the URL should be handled
+/// @param URL redirect URL
+- (BOOL)shouldHandleURL:(NSURL *)URL;
+
 /*! @brief Cancels the code flow session, invoking the request's callback with a cancelled error.
     @remarks Has no effect if called more than once, or after a
         @c OIDExternalUserAgentSession.resumeExternalUserAgentFlowWithURL: message was received.
