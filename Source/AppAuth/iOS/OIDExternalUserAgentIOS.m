@@ -104,7 +104,6 @@ NS_ASSUME_NONNULL_BEGIN
         }
         strongSelf->_webAuthenticationVC = nil;
         if (callbackURL &&
-            [strongSelf->_session shouldHandleURL:callbackURL] &&
             [strongSelf->_session resumeExternalUserAgentFlowWithURL:callbackURL]) {
           // no error
         } else {
@@ -141,7 +140,6 @@ NS_ASSUME_NONNULL_BEGIN
         }
         strongSelf->_authenticationVC = nil;
         if (callbackURL &&
-            [strongSelf->_session shouldHandleURL:callbackURL] &&
             [strongSelf->_session resumeExternalUserAgentFlowWithURL:callbackURL]) {
           // No error
         } else {
