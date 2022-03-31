@@ -64,7 +64,10 @@ static NSString *const kTestURIBase =
     NSDictionary* headers = [(NSHTTPURLResponse *)response allHeaderFields];
     NSString *location = [headers objectForKey:@"Location"];
     NSURL *url = [NSURL URLWithString:location];
-    [session resumeExternalUserAgentFlowWithURL:url];
+    
+    if ([session shouldHandleURL:url]) {
+      [session resumeExternalUserAgentFlowWithURL:url];
+    }
   }] resume];
 
   return YES;

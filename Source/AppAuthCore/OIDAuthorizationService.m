@@ -117,15 +117,11 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (BOOL)shouldHandleURL:(NSURL *)URL {
+  // rejects URLs that don't match redirect (these may be completely unrelated to the authorization)
   return [[self class] URL:URL matchesRedirectionURL:_request.redirectURL];
 }
 
 - (BOOL)resumeExternalUserAgentFlowWithURL:(NSURL *)URL {
-  // rejects URLs that don't match redirect (these may be completely unrelated to the authorization)
-  if (![self shouldHandleURL:URL]) {
-    return NO;
-  }
-  
   AppAuthRequestTrace(@"Authorization Response: %@", URL);
   
   // checks for an invalid state
@@ -247,6 +243,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (BOOL)shouldHandleURL:(NSURL *)URL {
+  // rejects URLs that don't match redirect (these may be completely unrelated to the authorization)
   // The logic of when to handle the URL is the same as for authorization requests: should match
   // down to the path component.
   return [[OIDAuthorizationSession class] URL:URL
@@ -254,10 +251,6 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (BOOL)resumeExternalUserAgentFlowWithURL:(NSURL *)URL {
-  // rejects URLs that don't match redirect (these may be completely unrelated to the authorization)
-  if (![self shouldHandleURL:URL]) {
-    return NO;
-  }
   // checks for an invalid state
   if (!_pendingEndSessionCallback) {
     [NSException raise:OIDOAuthExceptionInvalidAuthorizationFlow
