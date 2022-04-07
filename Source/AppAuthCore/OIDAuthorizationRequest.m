@@ -144,7 +144,6 @@ NSString *const OIDOAuthorizationRequestCodeChallengeMethodS256 = @"S256";
     _redirectURL = [redirectURL copy];
     _responseType = [responseType copy];
     if (![[self class] isSupportedResponseType:_responseType]) {
-      NSAssert(NO, OIDOAuthUnsupportedResponseTypeMessage, _responseType);
       return nil;
     }
     _state = [state copy];
