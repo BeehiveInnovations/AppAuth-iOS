@@ -190,7 +190,7 @@ static NSString *const kAdditionalParametersKey = @"additionalParameters";
     _refreshToken = [refreshToken copy];
     _codeVerifier = [codeVerifier copy];
     _additionalParameters =
-        [[NSDictionary alloc] initWithDictionary:additionalParameters copyItems:YES];
+        (NSMutableDictionary<NSString *, NSString *> *)[[NSDictionary alloc] initWithDictionary:additionalParameters copyItems:YES];
   }
   return self;
 }

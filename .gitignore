@@ -2,3 +2,6 @@ Docs/
 xcuserdata/
 Carthage/
 /.swiftpm/
+/AppAuth.xcframework/
+/DerivedData/
+/archives/
