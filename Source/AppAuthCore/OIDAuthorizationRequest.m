@@ -143,9 +143,9 @@ NSString *const OIDOAuthorizationRequestCodeChallengeMethodS256 = @"S256";
     _scope = [scope copy];
     _redirectURL = [redirectURL copy];
     _responseType = [responseType copy];
-    if (![[self class] isSupportedResponseType:_responseType]) {
-      return nil;
-    }
+//    if (![[self class] isSupportedResponseType:_responseType]) {
+//      return nil;
+//    }
     _state = [state copy];
     _nonce = [nonce copy];
     _codeVerifier = [codeVerifier copy];
