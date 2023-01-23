@@ -49,6 +49,7 @@
     authStateByPresentingAuthorizationRequest:(OIDAuthorizationRequest *)authorizationRequest
                      presentingViewController:(UIViewController *)presentingViewController
                       prefersEphemeralSession:(BOOL)prefersEphemeralSession
+                 tokenExchangeRequestCallback:(OIDAuthStateTokenExchangeRequestCallback)tokenExchangeRequestCallback
                                      callback:(OIDAuthStateAuthorizationCallback)callback {
   id<OIDExternalUserAgent> externalUserAgent;
 #if TARGET_OS_MACCATALYST
@@ -62,6 +63,7 @@
 #endif // TARGET_OS_MACCATALYST
   return [self authStateByPresentingAuthorizationRequest:authorizationRequest
                                        externalUserAgent:externalUserAgent
+                            tokenExchangeRequestCallback:tokenExchangeRequestCallback
                                                 callback:callback];
 }
 
