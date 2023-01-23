@@ -27,9 +27,35 @@
 @implementation OIDAuthState (Mac)
 
 + (id<OIDExternalUserAgentSession>)
-    authStateByPresentingAuthorizationRequest:(OIDAuthorizationRequest *)authorizationRequest
-                 tokenExchangeRequestCallback:(OIDAuthStateTokenExchangeRequestCallback)tokenExchangeRequestCallback
-                                     callback:(OIDAuthStateAuthorizationCallback)callback {
+authStateByPresentingAuthorizationRequest:(OIDAuthorizationRequest *)authorizationRequest
+                         presentingWindow:(NSWindow *)presentingWindow
+             tokenExchangeRequestCallback:(OIDAuthStateTokenExchangeRequestCallback)tokenExchangeRequestCallback
+                                 callback:(OIDAuthStateAuthorizationCallback)callback {
+  OIDExternalUserAgentMac *externalUserAgent = [[OIDExternalUserAgentMac alloc] initWithPresentingWindow:presentingWindow];
+  return [self authStateByPresentingAuthorizationRequest:authorizationRequest
+                                       externalUserAgent:externalUserAgent
+                            tokenExchangeRequestCallback:tokenExchangeRequestCallback
+                                                callback:callback];
+}
++ (id<OIDExternalUserAgentSession>)
+authStateByPresentingAuthorizationRequest:(OIDAuthorizationRequest *)authorizationRequest
+                         presentingWindow:(NSWindow *)presentingWindow
+                  prefersEphemeralSession:(BOOL)prefersEphemeralSession
+             tokenExchangeRequestCallback:(OIDAuthStateTokenExchangeRequestCallback)tokenExchangeRequestCallback
+                                 callback:(OIDAuthStateAuthorizationCallback)callback {
+  OIDExternalUserAgentMac *externalUserAgent =
+      [[OIDExternalUserAgentMac alloc] initWithPresentingWindow:presentingWindow
+                                        prefersEphemeralSession:prefersEphemeralSession];
+  return [self authStateByPresentingAuthorizationRequest:authorizationRequest
+                                       externalUserAgent:externalUserAgent
+                            tokenExchangeRequestCallback:tokenExchangeRequestCallback
+                                                callback:callback];
+}
+
++ (id<OIDExternalUserAgentSession>)
+authStateByPresentingAuthorizationRequest:(OIDAuthorizationRequest *)authorizationRequest
+             tokenExchangeRequestCallback:(OIDAuthStateTokenExchangeRequestCallback)tokenExchangeRequestCallback
+                                 callback:(OIDAuthStateAuthorizationCallback)callback {
   OIDExternalUserAgentMac *externalUserAgent = [[OIDExternalUserAgentMac alloc] init];
   return [self authStateByPresentingAuthorizationRequest:authorizationRequest
                                        externalUserAgent:externalUserAgent

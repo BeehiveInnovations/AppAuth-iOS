@@ -24,7 +24,7 @@ var platforms: [SupportedPlatform] {
     #if compiler(<5.3)
         return [
             .macOS(.v10_10),
-            .iOS(.v8),
+        .iOS(.v9),
             .tvOS(.v9),
             .watchOS(.v2),
         ]
@@ -50,9 +50,6 @@ let package = Package(
             name: "AppAuth",
             targets: ["AppAuth"]),
         .library(
-	        name: "AppAuthEnterpriseUserAgent",
-	        targets: ["AppAuthEnterpriseUserAgent"]),
-        .library(
             name: "AppAuthTV",
             targets: ["AppAuthTV"])
     ],
@@ -73,16 +70,6 @@ let package = Package(
                 .headerSearchPath("iOS"),
                 .headerSearchPath("macOS"),
                 .headerSearchPath("macOS/LoopbackHTTPServer"),
-            ]
-        ),
-        .target(
-            name: "AppAuthEnterpriseUserAgent",
-            dependencies: ["AppAuthCore"],
-            path: "Source/AppAuthEnterpriseUserAgent",
-            sources: ["iOS"],
-            publicHeadersPath: "",
-            cSettings: [
-                .headerSearchPath("iOS"),
             ]
         ),
         .target(
