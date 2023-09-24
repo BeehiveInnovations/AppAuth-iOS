@@ -137,7 +137,7 @@ static NSString *const kAdditionalHeadersKey = @"additionalHeaders";
     _codeVerifier = [codeVerifier copy];
     _additionalParameters =
         [[NSMutableDictionary alloc] initWithDictionary:additionalParameters copyItems:YES];
-        [[NSDictionary alloc] initWithDictionary:additionalHeaders copyItems:YES];
+    _additionalHeaders = [[NSDictionary alloc] initWithDictionary:additionalHeaders copyItems:YES];
 
     // Additional validation for the authorization_code grant type
     if ([_grantType isEqual:OIDGrantTypeAuthorizationCode]) {
