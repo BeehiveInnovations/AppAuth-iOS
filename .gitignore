@@ -7,3 +7,5 @@ Carthage/
 /archives/
 /AppAuthCore.xcframework/
 /DerivedDataSimulator
+/.DS_Store
+/.DerivedData
