@@ -1,0 +1,16 @@
+//
+//  libxml-osx.modulemap
+//  BusyCore
+//
+//  Created by Fahad on 09/02/2018.
+//  Copyright © 2018 Busy Apps. All rights reserved.
+//
+// Run xcrun --sdk macosx --show-sdk-path to see the path and use that here
+
+framework module AppAuthCore {
+  umbrella header "AppAuthCore.h"
+  
+  export *
+  module * { export * }
+}
+

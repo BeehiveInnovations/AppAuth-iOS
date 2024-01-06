@@ -698,6 +698,7 @@
 		039697451FA8258D003D1FB2 /* OIDURLSessionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDURLSessionProvider.m; sourceTree = "<group>"; };
 		0396974C1FA827AD003D1FB2 /* OIDURLSessionProviderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OIDURLSessionProviderTests.m; sourceTree = "<group>"; };
 		29CE000E2B4958B3005D4457 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		29CE000F2B495A84005D4457 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		2D47AAD8249A87010059B5A4 /* OIDTVAuthorizationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDTVAuthorizationResponse.m; sourceTree = "<group>"; };
 		2D47AAD9249A87010059B5A4 /* OIDTVAuthorizationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDTVAuthorizationRequest.h; sourceTree = "<group>"; };
 		2D47AADA249A87010059B5A4 /* OIDTVServiceConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDTVServiceConfiguration.m; sourceTree = "<group>"; };
@@ -1181,6 +1182,7 @@
 		8A9B9D5E24561EC40055353E /* AppAuthCore */ = {
 			isa = PBXGroup;
 			children = (
+				29CE000F2B495A84005D4457 /* module.modulemap */,
 				341741B41C5D8243000EF209 /* OIDAuthorizationRequest.h */,
 				341741B51C5D8243000EF209 /* OIDAuthorizationRequest.m */,
 				341741B61C5D8243000EF209 /* OIDAuthorizationResponse.h */,
@@ -2659,6 +2661,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Source/TVFramework/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = net.openid.AppAuthTV;
@@ -2691,6 +2694,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Source/TVFramework/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = net.openid.AppAuthTV;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -3005,6 +3009,7 @@
 				INFOPLIST_FILE = Source/CoreFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/Source/AppAuthCore/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = net.openid.AppAuthCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -3030,6 +3035,7 @@
 				INFOPLIST_FILE = Source/CoreFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/Source/AppAuthCore/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = net.openid.AppAuthCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -3055,6 +3061,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.openid.AppAuth-iOS";
 				PRODUCT_NAME = AppAuth;
 				SKIP_INSTALL = YES;
@@ -3080,6 +3087,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.openid.AppAuth-iOS";
 				PRODUCT_NAME = AppAuth;
 				SKIP_INSTALL = YES;
@@ -3131,6 +3139,7 @@
 				INFOPLIST_FILE = Source/Framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.openid.AppAuth-watchOS";
 				PRODUCT_NAME = AppAuth;
 				SDKROOT = watchos;
@@ -3157,6 +3166,7 @@
 				INFOPLIST_FILE = Source/Framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.openid.AppAuth-watchOS";
 				PRODUCT_NAME = AppAuth;
 				SDKROOT = watchos;
@@ -3182,6 +3192,7 @@
 				INFOPLIST_FILE = Source/Framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.openid.AppAuth-tvOS";
 				PRODUCT_NAME = AppAuth;
 				SDKROOT = appletvos;
@@ -3207,6 +3218,7 @@
 				INFOPLIST_FILE = Source/Framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.openid.AppAuth-tvOS";
 				PRODUCT_NAME = AppAuth;
 				SDKROOT = appletvos;
@@ -3264,6 +3276,7 @@
 				INFOPLIST_FILE = Source/Framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.openid.AppAuth-macOS";
 				PRODUCT_NAME = AppAuth;
 				SDKROOT = macosx;
@@ -3289,6 +3302,7 @@
 				INFOPLIST_FILE = Source/Framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.openid.AppAuth-macOS";
 				PRODUCT_NAME = AppAuth;
 				SDKROOT = macosx;
