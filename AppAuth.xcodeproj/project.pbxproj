@@ -697,6 +697,7 @@
 		039697441FA8258D003D1FB2 /* OIDURLSessionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDURLSessionProvider.h; sourceTree = "<group>"; };
 		039697451FA8258D003D1FB2 /* OIDURLSessionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDURLSessionProvider.m; sourceTree = "<group>"; };
 		0396974C1FA827AD003D1FB2 /* OIDURLSessionProviderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OIDURLSessionProviderTests.m; sourceTree = "<group>"; };
+		29CE000E2B4958B3005D4457 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		2D47AAD8249A87010059B5A4 /* OIDTVAuthorizationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDTVAuthorizationResponse.m; sourceTree = "<group>"; };
 		2D47AAD9249A87010059B5A4 /* OIDTVAuthorizationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDTVAuthorizationRequest.h; sourceTree = "<group>"; };
 		2D47AADA249A87010059B5A4 /* OIDTVServiceConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OIDTVServiceConfiguration.m; sourceTree = "<group>"; };
@@ -1094,6 +1095,7 @@
 				341741AF1C5D8243000EF209 /* AppAuth.h */,
 				3489709E21791B0C00ABEED4 /* AppAuthCore.h */,
 				2D47AADB249A87010059B5A4 /* AppAuthTV.h */,
+				29CE000E2B4958B3005D4457 /* module.modulemap */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -2707,6 +2709,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
 				EXECUTABLE_PREFIX = lib;
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -2719,6 +2722,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
 				EXECUTABLE_PREFIX = lib;
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -2846,6 +2850,7 @@
 		340E73861C5D819B0076B1F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -2854,6 +2859,7 @@
 		340E73871C5D819B0076B1F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -2961,6 +2967,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -2975,6 +2982,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -3327,6 +3335,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -3340,6 +3349,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				MODULEMAP_FILE = "$(SRCROOT)/Source/module.modulemap";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
