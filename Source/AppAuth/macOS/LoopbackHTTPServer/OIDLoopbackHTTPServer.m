@@ -284,12 +284,14 @@
         uint8_t buf[16 * 1024];
         uint8_t *buffer = NULL;
         NSUInteger len = 0;
+        
         if (![istream getBuffer:&buffer length:&len]) {
-            NSInteger amount = [istream read:buf maxLength:sizeof(buf)];
+            len = [istream read:buf maxLength:sizeof(buf)];
             buffer = buf;
-            len = amount;
         }
-        if (0 < len) {
+        
+        // Check that len does not exceed buffer size
+        if (len > 0 && len <= sizeof(buf)) {
             if (!ibuffer) {
                 ibuffer = [[NSMutableData alloc] init];
             }
